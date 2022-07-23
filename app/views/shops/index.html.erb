@@ -1,0 +1,19 @@
+<div>
+<% if user_signed_in? %>
+    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <% else %>
+     <%= link_to 'ログイン', new_user_session_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <%= link_to '会員登録', new_user_registration_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <% end %></div>
+
+<div>
+<h1>カフェ一覧</h1>
+<% @shops.each do |shop| %>
+  <p>店名</p>
+  <span><%= link_to shop.name, "/shops/#{shop.id}" %></span>
+  <%= link_to '予約する', reservations_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+<% end %>
+</div>
+<div>
+<p><%= link_to "Shopを追加する", shops_new_path %></p>
+</div>
