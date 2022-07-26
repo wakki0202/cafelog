@@ -11,7 +11,6 @@
 <% @shops.each do |shop| %>
   <p>店名</p>
   <span><%= link_to shop.name, "/shops/#{shop.id}" %></span>
-  <%= link_to '予約する', reservations_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
 <% end %>
 </div>
 <div>

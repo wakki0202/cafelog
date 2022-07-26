@@ -5,6 +5,7 @@
 <div>
 <h2>紹介文</h2>
 <p><%= @shop.text %></p>
+<a href="/shops/<%= @shop.id %>/reservations" class=" font-bold">このお店を予約する</a>
 </div>
 
 <%= link_to :back do %>

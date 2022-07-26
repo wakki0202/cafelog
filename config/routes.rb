@@ -4,12 +4,13 @@ get "shops/new", :to => "shops#new"
 get "shops/:id", :to => "shops#show"
 
 post "shops", :to => "shops#create"
-get "reservations", :to => "reservations#index"
-get "reservations/new", :to => "reservations#new"
-post "reservations", :to => "reservations#create"
-get "reservations/:id", :to => "reservations#show"
+
+resources :shops do
+    resources :reservations
+  end
 
 
+get "shops/:id/reservations/new", :to => "reservations#new"
   devise_for :users, :controllers => {
   :registrations => 'users/registrations',
   :sessions => 'users/sessions'   

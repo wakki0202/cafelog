@@ -13,9 +13,14 @@ class Reservation < ApplicationRecord
     reservation_data
   end
 
+    belongs_to :shop
+
   validate :date_before_start
   validate :date_current_today
   validate :date_three_month_end
+
+
+  
 
   def date_before_start
     errors.add(:day, "は過去の日付は選択できません") if day < Date.current
