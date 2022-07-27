@@ -6,7 +6,7 @@
       <h1>予約画面</h1>
       <p>3ヶ月先まで予約することができます。</p>
     </div>
-    <div class="col-12 mt-3">
+    <div class="col-12 mt-3 text-center">
       <%= week_calendar events: @reservations do |date, reservations| %>
         <%= date.day %>
       <% end %>
